@@ -1,0 +1,893 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --ink: #0F2A2A;         /* Deep Lagoon - team brand color */
+  --ink-soft: #3A5F55;
+  --paper: #F4FBFA;
+  --paper-dim: #E4F7F1;
+  --mint: #D9FAF4;        /* Aqua Silk - team brand color */
+  --teal: #00BFA6;        /* Teal Wave - team brand color */
+  --teal-deep: #059A85;
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --text: #12241F;
+  --text-muted: #4C6A61;
+  --container: 1120px;
+  --radius: 16px;
+  --line: #C9E5DC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--paper);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  display: block;
+  margin-bottom: 10px;
+}
+.why .eyebrow { color: var(--teal); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px 24px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.primarybtn {
+  background: var(--teal);
+  color: var(--ink);
+  box-shadow: 0 8px 20px rgba(0, 191, 166, 0.28);
+  border-radius: 50px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.primarybtn:hover {
+  background: var(--teal-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 191, 166, 0.36);
+}
+
+.ghostbtn {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+}
+.ghostbtn:hover {
+  border-color: var(--teal);
+  background: var(--paper-dim);
+  transform: translateY(-2px);
+}
+
+/* Arrow that slides on hover - add class="btnarrow" alongside primarybtn */
+.btnarrow::after {
+  content: '→';
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.btnarrow:hover::after {
+  transform: translateX(4px);
+}
+
+/* Trust badge pill - sits above the hero headline */
+.trustbadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--mint);
+  color: var(--teal-deep);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 8px 16px 8px 8px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+.trustbadge .avatars {
+  display: flex;
+}
+.trustbadge .avatars span {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--mint);
+  margin-left: -8px;
+}
+.trustbadge .avatars span:first-child { margin-left: 0; }
+
+section {
+  padding: 96px 0;
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: 64px 0;
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+}
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logomark {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.navlinks a { color: var(--ink-soft); transition: color 0.15s; }
+.navlinks a:hover { color: var(--ink); }
+.navaction { display: flex; align-items: center; gap: 12px; }
+
+/* menu button - hidden on desktop, shown only on small screens */
+#menubtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 4px;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+#menubtn:hover { background-color: var(--paper-dim); }
+#menubtn:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+@media (max-width: 860px) {
+  .navlinks { display: none; }
+  #menubtn { display: flex; }
+  .nav { justify-content: flex-start; gap: 16px; }
+  .navaction { margin-left: auto; }
+  .navlinks.open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--paper);
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    gap: 18px;
+  }
+  .navlinks.open .primarybtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.hero {
+  padding: 72px 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+}
+.hero::before {
+  width: 380px; height: 380px;
+  background: var(--mint);
+  top: -160px; right: -80px;
+  opacity: 0.7;
+}
+.hero::after {
+  width: 260px; height: 260px;
+  background: var(--teal);
+  bottom: -140px; left: -60px;
+  opacity: 0.12;
+}
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 900px) {
+  .hero .container { grid-template-columns: 1fr; }
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 700;
+  margin: 16px 0 20px;
+}
+.hero p.description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 46ch;
+  margin-bottom: 32px;
+}
+.heroaction { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+
+/* ==========================
+   HERO VISUAL — image panel + stat callout
+   (styled after a CoraPay-style layout, using our own palette)
+========================== */
+
+.herovisual {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.heroimagepanel {
+  background: linear-gradient(160deg, var(--ink), var(--teal-deep));
+  border-radius: 24px;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroimg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroimageicon {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.herobadge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 84px; height: 84px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.herobadge span { font-size: 1rem; }
+.herobadge:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.herostatbar {
+  position: absolute;
+  left: -16px;
+  bottom: -24px;
+  background: white;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 240px;
+  font-size: 0.85rem;
+  color: var(--text);
+  box-shadow: 0 16px 32px rgba(15, 42, 42, 0.15);
+}
+.herostatbar strong { color: var(--ink); }
+
+.herostaticon {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .herovisual { margin-top: 40px; }
+  .herostatbar { left: 50%; transform: translateX(-50%); bottom: -20px; }
+}
+
+.trust .container { padding-top: 0; padding-bottom: 0; }
+
+.trustband {
+  background: var(--ink);
+  border-radius: 28px;
+  padding: 56px 40px;
+  text-align: center;
+}
+.trustheading {
+  color: white;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin-bottom: 36px;
+}
+.trustgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+.trustcard {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 20px;
+}
+.trusticon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin: 0 auto 16px;
+}
+.trustnum {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--ink);
+}
+.trustlabel {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --ink: #0F2A2A;         /* Deep Lagoon - team brand color */
+  --ink-soft: #3A5F55;
+  --paper: #F4FBFA;
+  --paper-dim: #E4F7F1;
+  --mint: #D9FAF4;        /* Aqua Silk - team brand color */
+  --teal: #00BFA6;        /* Teal Wave - team brand color */
+  --teal-deep: #059A85;
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --text: #12241F;
+  --text-muted: #4C6A61;
+  --container: 1120px;
+  --radius: 16px;
+  --line: #C9E5DC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--paper);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  display: block;
+  margin-bottom: 10px;
+}
+.why .eyebrow { color: var(--teal); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px 24px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.primarybtn {
+  background: var(--teal);
+  color: var(--ink);
+  box-shadow: 0 8px 20px rgba(0, 191, 166, 0.28);
+  border-radius: 50px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.primarybtn:hover {
+  background: var(--teal-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 191, 166, 0.36);
+}
+
+.ghostbtn {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--line);
+}
+.ghostbtn:hover {
+  border-color: var(--teal);
+  background: var(--paper-dim);
+  transform: translateY(-2px);
+}
+
+/* Arrow that slides on hover - add class="btnarrow" alongside primarybtn */
+.btnarrow::after {
+  content: '→';
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.btnarrow:hover::after {
+  transform: translateX(4px);
+}
+
+/* Trust badge pill - sits above the hero headline */
+.trustbadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--mint);
+  color: var(--teal-deep);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 8px 16px 8px 8px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+}
+.trustbadge .avatars {
+  display: flex;
+}
+.trustbadge .avatars span {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  border: 2px solid var(--mint);
+  margin-left: -8px;
+}
+.trustbadge .avatars span:first-child { margin-left: 0; }
+
+section {
+  padding: 96px 0;
+}
+
+@media (max-width: 640px) {
+  section {
+    padding: 64px 0;
+  }
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+}
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logomark {
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.navlinks a { color: var(--ink-soft); transition: color 0.15s; }
+.navlinks a:hover { color: var(--ink); }
+.navaction { display: flex; align-items: center; gap: 12px; }
+
+/* menu button - hidden on desktop, shown only on small screens */
+#menubtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 4px;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--ink);
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+#menubtn:hover { background-color: var(--paper-dim); }
+#menubtn:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+@media (max-width: 860px) {
+  .navlinks { display: none; }
+  #menubtn { display: flex; }
+  .nav { justify-content: flex-start; gap: 16px; }
+  .navaction { margin-left: auto; }
+  .navlinks.open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    background: var(--paper);
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--line);
+    gap: 18px;
+  }
+  .navlinks.open .primarybtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.hero {
+  padding: 72px 0 40px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+}
+.hero::before {
+  width: 380px; height: 380px;
+  background: var(--mint);
+  top: -160px; right: -80px;
+  opacity: 0.7;
+}
+.hero::after {
+  width: 260px; height: 260px;
+  background: var(--teal);
+  bottom: -140px; left: -60px;
+  opacity: 0.12;
+}
+.hero .container {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 900px) {
+  .hero .container { grid-template-columns: 1fr; }
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 3.8rem);
+  font-weight: 700;
+  margin: 16px 0 20px;
+}
+.hero p.description {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 46ch;
+  margin-bottom: 32px;
+}
+.heroaction { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+
+/* ==========================
+   HERO VISUAL — image panel + stat callout
+   (styled after a CoraPay-style layout, using our own palette)
+========================== */
+
+.herovisual {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.heroimagepanel {
+  background: linear-gradient(160deg, var(--ink), var(--teal-deep));
+  border-radius: 24px;
+  aspect-ratio: 4 / 5;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroimg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroimageicon {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.herobadge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 84px; height: 84px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.2;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.herobadge span { font-size: 1rem; }
+.herobadge:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.herostatbar {
+  position: absolute;
+  left: -16px;
+  bottom: -24px;
+  background: white;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 240px;
+  font-size: 0.85rem;
+  color: var(--text);
+  box-shadow: 0 16px 32px rgba(15, 42, 42, 0.15);
+}
+.herostatbar strong { color: var(--ink); }
+
+.herostaticon {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .herovisual { margin-top: 40px; }
+  .herostatbar { left: 50%; transform: translateX(-50%); bottom: -20px; }
+}
+
+.trust .container { padding-top: 0; padding-bottom: 0; }
+
+.trustband {
+  background: var(--ink);
+  border-radius: 28px;
+  padding: 56px 40px;
+  text-align: center;
+}
+.trustheading {
+  color: white;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  margin-bottom: 36px;
+}
+.trustgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+.trustcard {
+  background: white;
+  border-radius: 16px;
+  padding: 28px 20px;
+}
+.trusticon {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin: 0 auto 16px;
+}
+.trustnum {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  color: var(--ink);
+}
+.trustlabel {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+
+/* ===
+/* ==========================================================
+   Teammates: add your section's CSS below this line.
+   Reuse the tokens above (var(--teal), var(--ink), etc.)
+   instead of picking your own colors, so it all matches.
+========================================================== */

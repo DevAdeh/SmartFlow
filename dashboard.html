@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard — SmartFlow</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css" title="" type="text/css" />
+  <link rel="stylesheet" href="section.css">
+  <link rel="stylesheet" href="section2.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+  <!--Header (simplified — no marketing nav on the dashboard) -->
+  <header>
+    <nav class="nav container">
+      <a href="index.html" class="logo"><img src="assets/smartflow-icon.png" alt="" class="logomark" width="32" height="32">SmartFlow</a>
+      <a href="index.html" class="ghostbtn btn">← Back to site</a>
+    </nav>
+  </header>
+
+  <!--Dashboard (Person 3 / BuildX Scholar section) -->
+  <section class="dashboard" id="dashboard">
+    <div class="container">
+      <span class="eyebrow">Your money, at a glance</span>
+      <h2 class="dashboardheading">One dashboard for everything you do with money</h2>
+      <p class="dashboardsub">A preview of the SmartFlow dashboard — send, request, split, and track, all from one screen. This is a front-end demonstration built with mock data; no real money moves here.</p>
+
+      <div class="dashboardapp">
+        <div class="dashboardtopbar">
+          <div class="dashboarduser">
+            <span class="dashboardavatar">TJ</span>
+            <div>
+              <div class="dashboardgreeting">Welcome back, Tomi</div>
+              <div class="dashboarddate" id="dashboardDate"></div>
+            </div>
+          </div>
+          <span class="dashboardmockbadge">Demo data</span>
+        </div>
+
+        <div class="dashboardgrid">
+          <!-- Balance + quick actions -->
+          <div class="balancecard">
+            <span class="balancelabel">Total balance</span>
+            <div class="balanceamount">
+              <span id="balanceValue">₦482,650.00</span>
+              <button id="toggleBalance" class="balancetoggle" aria-label="Hide balance" aria-pressed="false">🙈</button>
+            </div>
+            <span class="balancechange">▲ 12.4% since last month</span>
+
+            <div class="quickactions">
+              <button class="quickactionbtn" data-action="send" aria-pressed="false">
+                <span class="quickactionicon" aria-hidden="true">↗</span> Send
+              </button>
+              <button class="quickactionbtn" data-action="request" aria-pressed="false">
+                <span class="quickactionicon" aria-hidden="true">↙</span> Request
+              </button>
+              <button class="quickactionbtn" data-action="split" aria-pressed="false">
+                <span class="quickactionicon" aria-hidden="true">⊞</span> Split Bill
+              </button>
+              <button class="quickactionbtn" data-action="link" aria-pressed="false">
+                <span class="quickactionicon" aria-hidden="true">🔗</span> Pay Link
+              </button>
+            </div>
+          </div>
+
+          <!-- Action preview panel -->
+          <div class="actionpanel" id="actionPanel">
+            <div class="actionpanelempty" id="actionEmpty">
+              <span aria-hidden="true">👆</span>
+              <p>Pick a quick action to preview how it works</p>
+            </div>
+
+            <form class="actionform" id="form-send" hidden>
+              <span class="actionformtag">UI demonstration only</span>
+              <h4>Send money</h4>
+              <label for="sendTo">Recipient</label>
+              <input type="text" id="sendTo" placeholder="Username or phone number">
+              <label for="sendAmount">Amount (₦)</label>
+              <input type="number" id="sendAmount" placeholder="0.00">
+              <button type="submit" class="primarybtn btn">Send money</button>
+            </form>
+
+            <form class="actionform" id="form-request" hidden>
+              <span class="actionformtag">UI demonstration only</span>
+              <h4>Request payment</h4>
+              <label for="reqFrom">Request from</label>
+              <input type="text" id="reqFrom" placeholder="Username or phone number">
+              <label for="reqAmount">Amount (₦)</label>
+              <input type="number" id="reqAmount" placeholder="0.00">
+              <label for="reqNote">Note (optional)</label>
+              <input type="text" id="reqNote" placeholder="What's this for?">
+              <button type="submit" class="primarybtn btn">Send request</button>
+            </form>
+
+            <form class="actionform" id="form-split" hidden>
+              <span class="actionformtag">UI demonstration only</span>
+              <h4>Split a bill</h4>
+              <label for="splitTotal">Total amount (₦)</label>
+              <input type="number" id="splitTotal" placeholder="0.00">
+              <label for="splitPeople">Split between</label>
+              <select id="splitPeople">
+                <option value="2">2 people</option>
+                <option value="3">3 people</option>
+                <option value="4">4 people</option>
+                <option value="5">5 people</option>
+              </select>
+              <p class="splitresult" id="splitResult">Each person pays ₦0.00</p>
+              <button type="submit" class="primarybtn btn">Send split requests</button>
+            </form>
+
+            <div class="actionform" id="form-link" hidden>
+              <span class="actionformtag">UI demonstration only</span>
+              <h4>Create a payment link</h4>
+              <label for="linkAmount">Amount (₦) — leave blank for "any amount"</label>
+              <input type="number" id="linkAmount" placeholder="0.00">
+              <label for="linkNote">Label</label>
+              <input type="text" id="linkNote" placeholder="e.g. Freelance invoice">
+              <button type="button" class="primarybtn btn" id="generateLinkBtn">Generate link</button>
+              <div class="linkoutput" id="linkOutput" hidden>
+                <span id="linkText"></span>
+                <button type="button" class="ghostbtn btn" id="copyLinkBtn">Copy</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transaction history -->
+        <div class="transactionpanel">
+          <div class="transactionheader">
+            <h3>Transaction history</h3>
+            <div class="transactionfilters" role="tablist" aria-label="Filter transactions">
+              <button class="filterchip active" data-filter="all">All</button>
+              <button class="filterchip" data-filter="received">Received</button>
+              <button class="filterchip" data-filter="sent">Sent</button>
+              <button class="filterchip" data-filter="bills">Bills</button>
+            </div>
+          </div>
+          <input type="text" id="txSearch" class="transactionsearch" placeholder="Search transactions by name...">
+          <ul class="transactionlist" id="transactionList" aria-live="polite"></ul>
+          <p class="transactionempty" id="transactionEmpty" hidden>No transactions match your search.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

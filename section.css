@@ -1,0 +1,293 @@
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
+.how-it-works {
+    background: #e5e5e5;
+    padding: 96px 24px;
+}
+
+.how-it-works .section-heading,
+.why-choose-us .section-heading {
+    max-width: 720px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--teal-deep);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+}
+
+.section-heading h2 {
+    font-family: var(--font-display);
+    color: var(--ink);
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.section-heading p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* STEPS */
+
+.steps {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    counter-reset: steps;
+}
+
+.steps li {
+    counter-increment: steps;
+
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #C9E5DC;
+    border-radius: 20px;
+    padding: 32px 28px 32px 82px;
+
+    min-height: 170px;
+
+    box-shadow: 0 10px 25px rgba(15, 42, 42, 0.07);
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+/* NUMBER CIRCLE */
+
+.steps li::before {
+    content: counter(steps);
+
+    position: absolute;
+    left: 24px;
+    top: 30px;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #00BFA6;
+    color: #0F2A2A;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+
+/* STEP TEXT */
+
+.steps h3 {
+    color: var(--ink);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.steps p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+
+/* TAP / HOVER EFFECT */
+
+.steps li:hover,
+.steps li:active {
+    background: #D9FAF4;
+    border-color: #00BFA6;
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(15, 42, 42, 0.12);
+}
+
+.steps li:hover::before,
+.steps li:active::before {
+    background: #0F2A2A;
+    color: #D9FAF4;
+}
+
+
+/* =========================================
+   WHY CHOOSE SMARTFLOW
+========================================= */
+
+.why-choose-us {
+    background: #0F2A2A;
+    padding: 96px 24px;
+}
+
+.why-choose-us .section-label {
+    color: #00BFA6;
+}
+
+.why-choose-us .section-heading h2 {
+    color: #ffffff;
+}
+
+.why-choose-us .section-heading h2 span {
+    color: #00BFA6;
+}
+
+.why-choose-us .section-heading p {
+    color: #c5d8d2;
+}
+
+
+/* WHY LIST */
+
+.why-list {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    padding: 0;
+
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.why-list li {
+    background: #163B38;
+    border: 1px solid rgba(0, 191, 166, 0.22);
+    border-radius: 20px;
+
+    padding: 28px;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.why-list li h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.why-list li p {
+    color: #b9cec8;
+    font-size: 0.92rem;
+    line-height: 1.7;
+}
+
+.why-list li strong {
+    color: #00BFA6;
+}
+
+
+/* TAP / HOVER EFFECT */
+
+.why-list li:hover,
+.why-list li:active {
+    background: #00BFA6;
+    border-color: #00BFA6;
+    transform: translateY(-5px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+}
+
+.why-list li:hover h3,
+.why-list li:active h3 {
+    color: #0F2A2A;
+}
+
+.why-list li:hover p,
+.why-list li:active p {
+    color: #163B38;
+}
+
+.why-list li:hover strong,
+.why-list li:active strong {
+    color: #0F2A2A;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 700px) {
+
+    .how-it-works,
+    .why-choose-us {
+        padding: 70px 20px;
+    }
+
+    .how-it-works .section-heading,
+    .why-choose-us .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .steps,
+    .why-list {
+        grid-template-columns: 1fr;
+    }
+
+    .steps li {
+        padding: 28px 22px 28px 78px;
+    }
+
+    .why-list li {
+        padding: 25px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    .how-it-works,
+    .why-choose-us {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.75rem;
+    }
+
+    .steps li {
+        padding-left: 70px;
+    }
+
+    .steps li::before {
+        left: 18px;
+    }
+}

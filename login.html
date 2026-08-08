@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log in — SmartFlow</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css" title="" type="text/css" />
+  <link rel="stylesheet" href="section.css">
+  <link rel="stylesheet" href="section2.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+  <!--Header (simplified — no marketing nav on the auth page) -->
+  <header>
+    <nav class="nav container">
+      <a href="index.html" class="logo"><img src="assets/smartflow-icon.png" alt="" class="logomark" width="32" height="32">SmartFlow</a>
+      <a href="index.html" class="ghostbtn btn">← Back to site</a>
+    </nav>
+  </header>
+
+  <section class="authsection">
+    <div class="container authcontainer">
+      <div class="authcard">
+        <span class="actionformtag">UI demonstration</span>
+        <div class="authtabs" role="tablist" aria-label="Choose account action">
+          <button class="authtab active" data-tab="create" role="tab" aria-selected="true">Create account</button>
+          <button class="authtab" data-tab="login" role="tab" aria-selected="false">Log in</button>
+        </div>
+
+        <form class="actionform authform" id="form-create" novalidate>
+          <h4>Create your free account</h4>
+          <label for="createName">Full name</label>
+          <input type="text" id="createName" placeholder="e.g. Tomi Johnson" required>
+          <label for="createEmail">Email or phone number</label>
+          <input type="text" id="createEmail" placeholder="you@example.com" required>
+          <label for="createPassword">Password</label>
+          <input type="password" id="createPassword" placeholder="Create a password" required>
+          <button type="submit" class="primarybtn btn">Create free account</button>
+          <p class="authswitch">Already have an account? <a href="#" data-switch="login">Log in</a></p>
+        </form>
+
+        <form class="actionform authform" id="form-login" hidden novalidate>
+          <h4>Welcome back</h4>
+          <label for="loginEmail">Email or phone number</label>
+          <input type="text" id="loginEmail" placeholder="you@example.com" required>
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" placeholder="Your password" required>
+          <button type="submit" class="primarybtn btn">Log in</button>
+          <p class="authswitch">New to SmartFlow? <a href="#" data-switch="create">Create an account</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

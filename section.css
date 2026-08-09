@@ -154,7 +154,10 @@
 .why-choose-us .section-heading h2 span {
     color: #00BFA6;
 }
-
+.abt{
+   color: white;
+   margin-bottom: 25px
+}
 .why-choose-us .section-heading p {
     color: #c5d8d2;
 }

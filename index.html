@@ -18,8 +18,8 @@
       <a href="#" class="logo"><img src="assets/smartflow-icon.png" alt="" class="logomark" width="32" height="32">SmartFlow</a>
       <ul class="navlinks">
         <li><a href="#features">Features</a></li>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#why-choose-us">About</a></li>
         <li><a href="#faq">FAQs</a></li>
         <li><a href="#cta" class="primarybtn">Get Started</a></li>
       </ul>
@@ -40,6 +40,7 @@
           <a href="login.html" class="primarybtn btn btnarrow">Create Free Account</a>
           <a href="#how" class="ghostbtn btn">See How It Works</a>
         </div>
+        <p class="herotrust">🔒 Bank-grade encryption &nbsp;•&nbsp; No hidden fees</p>
       </div>
 
       <div class="herovisual">
@@ -58,7 +59,7 @@
     </div>
   </section>
   <!--Trust-->
-  <section class="trust">
+  <section class="trust" data-reveal>
     <div class="container">
       <div class="trustband">
         <h2 class="trustheading">Built on trust, made for growth</h2>
@@ -80,11 +81,37 @@
           </div>
         </div>
       </div>
+    </div>
  </section>
 <!-- Teammates: add your
    sections below this line, then the footer + script tag stay at the very bottom -->
-  
-<section class="how-it-works" id="how-it-works">
+
+<section class="features" id="features" data-reveal>
+    <div class="section-heading">
+        <span class="section-label">FEATURES</span>
+        <h2>Everything you need, in one wallet.</h2>
+        <p>SmartFlow brings the tools you'd normally juggle across three apps into one clean, secure place.</p>
+    </div>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">💸</div>
+            <h3>Send & Receive Instantly</h3>
+            <p>Move money to anyone in seconds — no long account numbers to remember, no waiting around.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">🧾</div>
+            <h3>Split Bills Effortlessly</h3>
+            <p>Share rent, dinner, or a group gift and let SmartFlow work out exactly what everyone owes.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon" aria-hidden="true">📊</div>
+            <h3>Track Every Naira</h3>
+            <p>See where your money goes with a clear, real-time breakdown of spending — no spreadsheets needed.</p>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works" id="how-it-works" data-reveal>
 
     <div class="section-heading">
         <span class="section-label">HOW IT WORKS</span>
@@ -131,7 +158,7 @@
     </ol>
 
 </section>
-<section class="why-choose-us" id="why-choose-us">
+<section class="why-choose-us" id="why-choose-us" data-reveal>
 
     <div class="section-head">
         <span class="section-label">WHY CHOOSE SMARTFLOW</span>
@@ -192,7 +219,7 @@
     </ul>
 
 </section>
-  <section class="app-preview" id="app-preview">
+  <section class="app-preview" id="app-preview" data-reveal>
         <div class="container app-preview-grid">
             <div class="app-preview-text">
                 <p class="section-label">📱 App preview</p>
@@ -244,7 +271,7 @@
       </div>
     </section>
     
-   <section class="testimonial" id="testimonial"> 
+   <section class="testimonial" id="testimonial" data-reveal>
        <div class="container">
            <p class="section-label">💬 Testimonials </p>
        <h2 class="section-title"> What Our Users Say</h2> 
@@ -300,51 +327,54 @@
    </section>
   
              
-     <section class="faq" id="faq">
+     <section class="faq" id="faq" data-reveal>
          <p class="section-label">❓ FAQs</p>
          <h2 class="section-title">Frequently Asked Questions</h2>
          <p class="section-sub">Got questions? We've got answers. Here's what people usually ask</p>
          <div class="faq-grid">
              <div class="faq-item">
-                 <div class="faq-question">
+                 <button class="faq-question" aria-expanded="false">
                      <span class="icon">🔒</span> Is SmartFlow secure?
-                 </div>
-                 <div class="faq-answer">
+                     <span class="caret" aria-hidden="true">⌄</span>
+                 </button>
+                 <div class="faq-answer"><div>
                      <p>Yes! SmartFlow uses bank-grade encryption and security protocols to keep your money and data safe. We're committed to protecting your financial information.</p>
-                 </div>
+                 </div></div>
              </div>
-             
+
              <div class="faq-item">
-                 <div class="faq-question">
+                 <button class="faq-question" aria-expanded="false">
                      <span class="icon">💰</span> Is SmartFlow free?
-                 </div>
-                 <div class="faq-answer">
+                     <span class="caret" aria-hidden="true">⌄</span>
+                 </button>
+                 <div class="faq-answer"><div>
                      <p>Yes! SmartFlow is completely free to download and use. No hidden fees, no subscription costs. Just simple, fast payments.</p>
-                 </div>
+                 </div></div>
              </div>
-             
+
              <div class="faq-item">
-                 <div class="faq-question">
+                 <button class="faq-question" aria-expanded="false">
                      <span class="icon">📝</span> How do I create an account?
-                 </div>
-                 <div class="faq-answer">
+                     <span class="caret" aria-hidden="true">⌄</span>
+                 </button>
+                 <div class="faq-answer"><div>
                       <p>Simply download the SmartFlow app, enter your email or phone number, and follow the verification steps. You'll be ready to send money in minutes!</p>
-                 </div>
+                 </div></div>
              </div>
-             
+
             <div class="faq-item">
-                <div class="faq-question">
+                <button class="faq-question" aria-expanded="false">
                      <span class="icon">🏢</span> Can I use SmartFlow for business?
-                </div>
-                <div class="faq-answer">
+                     <span class="caret" aria-hidden="true">⌄</span>
+                </button>
+                <div class="faq-answer"><div>
                     <p>Absolutely! SmartFlow is perfect for small businesses. You can send invoices, track payments, and manage your finances all in one place.</p>
-                </div>
-                
+                </div></div>
             </div>
          </div>
      </section>
      
-          <section class="cta" id="cta">
+          <section class="cta" id="cta" data-reveal>
         <div class="container">
             <h2>🚀 Ready to simplify your finances?</h2>
             <p>
@@ -412,4 +442,5 @@
  <script src="script.js"></script>
 </body>
 
-</html>
+                                                                                                          </html>
+                                                          

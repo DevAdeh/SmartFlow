@@ -23,6 +23,51 @@ if (menuBtn && navLinks) {
 // so everything loads from one script.js.
 // ============================================
 
+// ---- FAQ accordion (index.html) ----
+// Each .faq-item has a <button class="faq-question"> and a .faq-answer.
+// Clicking a question toggles its own item open/closed. Only one
+// open at a time keeps the list from getting tall.
+document.querySelectorAll(".faq-item").forEach((item) => {
+  const question = item.querySelector(".faq-question");
+  if (!question) return;
+  question.addEventListener("click", () => {
+    const isOpen = item.classList.contains("open");
+    document.querySelectorAll(".faq-item.open").forEach((openItem) => {
+      openItem.classList.remove("open");
+      openItem.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+    });
+    if (!isOpen) {
+      item.classList.add("open");
+      question.setAttribute("aria-expanded", "true");
+    }
+  });
+});
+
+// ---- Scroll reveal (index.html) ----
+// Any element with [data-reveal] fades + rises into view the first
+// time it enters the viewport. Skipped entirely for people who've
+// asked their OS for reduced motion.
+const revealEls = document.querySelectorAll("[data-reveal]");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (revealEls.length && !prefersReducedMotion && "IntersectionObserver" in window) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  revealEls.forEach((el) => revealObserver.observe(el));
+} else {
+  // No IntersectionObserver support, or motion is reduced: just show everything.
+  revealEls.forEach((el) => el.classList.add("is-visible"));
+}
+
 // ---- Toast helper (shared by the dashboard and the auth page) ----
 const toast = document.getElementById("toast");
 function showToast(message) {
@@ -273,4 +318,5 @@ if (generateLinkBtn) {
     navigator.clipboard?.writeText(linkText.textContent).catch(() => {});
     showToast("Link copied to clipboard.");
   });
-}
+    }
+      

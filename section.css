@@ -3,7 +3,7 @@
 ========================================= */
 
 .how-it-works {
-    background: #e5e5e5;
+    background: var(--paper-dim);
     padding: 96px 24px;
 }
 
@@ -14,14 +14,10 @@
     text-align: center;
 }
 
-.section-label {
-    display: inline-block;
-    color: var(--teal-deep);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    margin-bottom: 12px;
-}
+/* .section-label is defined once, in section2.css, and shared by every
+   section (how-it-works, why-choose-us, features, app-preview, testimonial,
+   faq). It used to be redefined here too with slightly different values —
+   whichever file loaded last silently won. One definition now. */
 
 .section-heading h2 {
     font-family: var(--font-display);
@@ -146,7 +142,10 @@
 .why-choose-us .section-label {
     color: #00BFA6;
 }
-
+.abt{
+    color: white;
+    margin-bottom: 25px;
+}
 .why-choose-us .section-heading h2 {
     color: #ffffff;
 }
@@ -154,10 +153,7 @@
 .why-choose-us .section-heading h2 span {
     color: #00BFA6;
 }
-.abt{
-   color: white;
-   margin-bottom: 25px
-}
+
 .why-choose-us .section-heading p {
     color: #c5d8d2;
 }
@@ -293,4 +289,4 @@
     .steps li::before {
         left: 18px;
     }
-}
+   }

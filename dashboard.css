@@ -1,10 +1,3 @@
-/* ==========================================================
-   DASHBOARD (Person 3 / BuildX Scholar section)
-   Standalone pages: login.html, dashboard.html.
-   Front-end demo only — mock data, no real transactions or auth.
-   Reuses tokens from style.css (--teal, --ink, --mint, etc.)
-========================================================== */
-
 .dashboardheading {
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   margin-bottom: 16px;
@@ -430,3 +423,4 @@
   text-decoration: none;
 }
 .authswitch a:hover { text-decoration: underline; }
+   
